@@ -3,6 +3,14 @@
     margin: 0 auto;
     padding: 0 80px;
 }
+.leftside-container { 
+    width:100%;
+    margin-right: 80px; 
+}
+.rightside-container {
+    width: 100%;
+    margin-left: 80px;
+}
 
 .header__margin {
     margin-bottom: 88px;

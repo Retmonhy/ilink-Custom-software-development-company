@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Wrapper, FlexWrapper } from "./GeneralComp/SuppComponents";
 import vektor from "../images/Vector.svg"
 import pit from '../images/pit.svg'
+import photo from '../images/11.jpg'
 
-const ImageWrapper = styled(Wrapper)``;
+const ImageWrapper = styled(Wrapper)`
+    max-width: 40%;
+    overflow: hidden;
+    max-height: 404px;
+    margin-top: 60px;
+    img {width: 100%; object-fit: contain; object-position: 50% 50%;}
+
+`;
 const Name = styled(Wrapper)`
     h2 {
         color: #585cc6;
@@ -63,7 +71,7 @@ const About = () => {
         <Wrapper className="container">
             <FlexWrapper>
                 <ImageWrapper>
-                    {/* <img /> */}
+                    <img src={photo} alt="user photo"/>
                 </ImageWrapper>
                 <Description>
                     <Wrapper>

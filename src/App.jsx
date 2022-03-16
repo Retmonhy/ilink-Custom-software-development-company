@@ -1,6 +1,7 @@
 import './App.css';
 import Header from "./Components/Header/Header"
 import About from "./Components/About"
+import Feedback from './Components/Feedback/Feedback';
 import styled from "styled-components"
 
 
@@ -23,6 +24,7 @@ function App() {
       <Main>
         <MainHeader className="container header__margin">Добро пожаловать <br/>в академию!</MainHeader>
         <About/>
+        <Feedback/>
       </Main>
     </div>
   );
