@@ -7,3 +7,29 @@
 .header__margin {
     margin-bottom: 88px;
 }
+
+.withIcon>div {
+    justify-content: start;
+}
+
+.iconLeft>div {
+    flex-direction: row-reverse;
+}
+
+.iconRight>div {
+    flex-direction: row;
+}
+
+.withIcon div img {
+    display: block;
+    max-width: 32px;
+    max-height: 32px;
+}
+
+.iconRight div img {
+    margin-left: 10px;
+}
+
+.iconLeft div img {
+    margin-right: 10px;
+}
