@@ -85,9 +85,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background: #797DDF;
-}
+
 
 button:disabled {
     cursor: no-drop;

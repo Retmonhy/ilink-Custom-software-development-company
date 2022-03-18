@@ -4,12 +4,10 @@
     padding: 0 80px;
 }
 .leftside-container { 
-    width:100%;
-    margin-right: 80px; 
+    padding-left: 0;
 }
 .rightside-container {
-    width: 100%;
-    margin-left: 80px;
+    padding-right: 0;
 }
 
 .header__margin {

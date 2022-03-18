@@ -65,10 +65,13 @@ const AboutMe = styled.div`
         font-family: "Gilroy-Medium", sans-serif;
     }
 `;
+const AboutWrapper = styled(Wrapper)`
+    padding-bottom: 120px;
+`;
 
 const About = () => {
     return (
-        <Wrapper className="container">
+        <AboutWrapper className="container">
             <FlexWrapper>
                 <ImageWrapper>
                     <img src={photo} alt="user photo"/>
@@ -109,7 +112,7 @@ const About = () => {
                     </Wrapper>
                 </Description>
             </FlexWrapper>
-        </Wrapper>
+        </AboutWrapper>
     );
 };
 

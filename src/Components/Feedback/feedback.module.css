@@ -1,0 +1,15 @@
+button.sliderBtn {
+    border: none;
+    
+}
+button.sliderBtn:hover:not(:disabled) > svg > path{
+    stroke: #585CC6;
+
+}
+button.sliderBtn:disabled {
+    background: #E0E0E0;
+    
+}
+button.sliderBtn:disabled > svg > path {
+    stroke: #ADADAD;
+}
