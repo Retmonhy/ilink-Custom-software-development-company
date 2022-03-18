@@ -3,6 +3,7 @@ import Header from "./Components/Header/Header"
 import About from "./Components/About"
 import Feedback from './Components/Feedback/Feedback';
 import styled from "styled-components"
+import Copyright from './Components/Copyright';
 
 
 const Main = styled.main`
@@ -26,6 +27,7 @@ function App() {
         <About/>
         <Feedback/>
       </Main>
+      <Copyright/>
     </div>
   );
 }
