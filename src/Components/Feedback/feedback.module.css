@@ -2,7 +2,7 @@ button.sliderBtn {
     border: none;
     
 }
-button.sliderBtn:hover:not(:disabled) > svg > path{
+button.sliderBtn:hover:not(:disabled) > svg > use{
     stroke: #585CC6;
 
 }
@@ -10,6 +10,9 @@ button.sliderBtn:disabled {
     background: #E0E0E0;
     
 }
-button.sliderBtn:disabled > svg > path {
+button.sliderBtn:disabled > svg > use {
     stroke: #ADADAD;
+}
+.error {
+    border-color: #EB5757;
 }

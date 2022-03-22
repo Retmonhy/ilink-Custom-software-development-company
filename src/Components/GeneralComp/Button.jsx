@@ -9,11 +9,13 @@ const GeneralButton = styled.button`
     border: none;
     color: #fff;
     border-radius: 2px;
+    &:hover {
+    }
 `;
 
-const Button = ({buttonText}) => {
+const Button = ({buttonText, onClick }) => {
     return (
-        <GeneralButton>
+        <GeneralButton onClick={onClick || (()=>{}) }>
             {buttonText}
         </GeneralButton>
 

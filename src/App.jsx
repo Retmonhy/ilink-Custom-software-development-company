@@ -4,6 +4,8 @@ import About from "./Components/About"
 import Feedback from './Components/Feedback/Feedback';
 import styled from "styled-components"
 import Copyright from './Components/Copyright';
+import AddFeedbackModal from './Components/Feedback/FeedbackForm/AddFeedbackModal'
+import React, { useState } from "react"
 
 
 const Main = styled.main`
@@ -19,13 +21,15 @@ const MainHeader = styled.h1`
 `;
 
 function App() {
+  const [ modalIsOpen, setModalIsOpen ] = useState(false);
   return (
     <div className="App">
       <Header/>
       <Main>
         <MainHeader className="container header__margin">Добро пожаловать <br/>в академию!</MainHeader>
         <About/>
-        <Feedback/>
+        <Feedback setModalIsOpen={setModalIsOpen}/>
+        {modalIsOpen && <AddFeedbackModal setModalIsOpen={setModalIsOpen}/>}
       </Main>
       <Copyright/>
     </div>

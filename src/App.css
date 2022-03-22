@@ -32,10 +32,20 @@
     max-height: 32px;
 }
 
-.iconRight div img {
+.iconRight div svg {
     margin-left: 10px;
 }
 
-.iconLeft div img {
+.iconLeft div svg {
     margin-right: 10px;
 }
+@keyframes rotate {
+    0% {
+        transform-origin: 50% 50%;
+      transform: rotate(0);
+    }
+    100% {
+        transform-origin: 50% 50%;
+      transform: rotate(360deg);
+    }
+  }

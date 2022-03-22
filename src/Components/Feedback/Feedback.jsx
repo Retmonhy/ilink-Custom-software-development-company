@@ -1,13 +1,15 @@
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
+import Carousel from 'react-elastic-carousel';
+import { feedbacks } from './feedbacks';
+import svgSprite from "../../images/svg-sprite.svg"
+import feeds from './feedback.module.css';
+// Components
 import Button from '../GeneralComp/Button';
 import { Wrapper, FlexWrapper } from '../GeneralComp/SuppComponents';
 import FeedbackItem from './FeedbackItem';
-import { feedbacks } from './feedbacks';
-import Carousel from 'react-elastic-carousel';
-import arrowNext from '../../images/ArrowNext.svg';
-import arrowPrev from '../../images/ArrowPrev.svg';
-import feeds from './feedback.module.css';
+import AddFeedbackModal from './FeedbackForm/AddFeedbackModal';
+
 
 const Container = styled.div``;
 const FeedbackWrapper = styled(Wrapper)`
@@ -34,6 +36,10 @@ const CarouselButton = styled.button`
     height: 55px;
     border-radius: 2px;
     background: #fff url(${(props) => props.arrowPath}) center no-repeat;
+    svg > use{ stroke: #333; }
+    &:hover svg > use{ stroke: #333; }
+    /* &:hover svg > use {fill: red; } */
+
 `;
 const PaginationItem = styled.span`
     display: inline-block;
@@ -48,17 +54,18 @@ const PaginationItem = styled.span`
     }
 `;
 
-const Feedback = () => {
+const Feedback = ({setModalIsOpen}) => {
     const carouselRef = useRef(null);
     const [prevState, setPrevState] = useState(true);
     const [nextState, setNextState] = useState(false);
     return (
         <Container className='container leftside-container'>
             <FlexWrapper style={{ alignItems: 'end' }}>
+                
                 <FeedbackWrapper>
                     <HeaderBlock>
                         <FeedbackHeader>Отзывы</FeedbackHeader>
-                        <Button buttonText='+ Добавить отзыв' />
+                        <Button onClick={() => setModalIsOpen(true)} buttonText='+ Добавить отзыв' />
                     </HeaderBlock>
                     <Carousel
                         ref={carouselRef}
@@ -105,31 +112,23 @@ const Feedback = () => {
                         ))}
                     </Carousel>
                 </FeedbackWrapper>
+
                 <ButtonsWrapper>
                     <CarouselButton
                         disabled={prevState}
                         className={feeds.sliderBtn}
                         style={{ marginRight: '15px' }}
                         onClick={() => carouselRef.current.slidePrev()}>
-                        <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                            <path
-                                d='M4.25 12.2744L19.25 12.2744' stroke='#000' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' />
-                            <path
-                                d='M10.2998 18.2988L4.2498 12.2748L10.2998 6.24976' stroke='#000' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round'/>
-                        </svg>
+                        <svg height="24" width="24"><use xlinkHref={svgSprite+"#arrowPrev"}></use></svg>
                     </CarouselButton>
                     <CarouselButton
                         disabled={nextState}
                         className={feeds.sliderBtn}
                         onClick={() => carouselRef.current.slideNext()}>
-                        <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                            <path
-                                d='M19.75 11.7256L4.75 11.7256' stroke='#333333' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' />
-                            <path
-                                d='M13.7002 5.70124L19.7502 11.7252L13.7002 17.7502' stroke='#333333' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' />
-                        </svg>
+                        <svg height="24" width="24"><use xlinkHref={svgSprite+"#arrowNext"}></use></svg>
                     </CarouselButton>
                 </ButtonsWrapper>
+
             </FlexWrapper>
         </Container>
     );
