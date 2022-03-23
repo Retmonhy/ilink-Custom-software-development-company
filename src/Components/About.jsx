@@ -5,15 +5,11 @@ import photo from '../images/11.jpg';
 import svgSprite from '../images/svg-sprite.svg';
 
 const ImageWrapper = styled(Wrapper)`
-    max-width: 40%;
+    width: 40%;
     overflow: hidden;
-    max-height: 404px;
+    height: 450px;
     margin-top: 60px;
-    img {
-        width: 100%;
-        object-fit: contain;
-        object-position: 50% 50%;
-    }
+    background: transparent url(${props => props.image}) center / cover no-repeat;
 `;
 const Name = styled(Wrapper)`
     h2 {
@@ -37,6 +33,7 @@ const BirthDate = styled(Wrapper)`
 `;
 const Ul = styled(FlexWrapper)`
     justify-content: start;
+    flex-wrap: wrap;
     margin: 20px 0;
     li {
         margin-right: 40px;
@@ -75,18 +72,31 @@ const AboutMe = styled.div`
     span {
         font-family: 'Gilroy-Medium', sans-serif;
     }
+    @media screen and (max-width: 1200px ) {
+        span {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    @media screen and (max-width: 1100px ) {
+        span {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
 `;
 const AboutWrapper = styled(Wrapper)`
     padding-bottom: 120px;
+`;
+const AboutFlex = styled(FlexWrapper)`
+@media screen and (max-width: 1200px ) {
+}
 `;
 
 const About = () => {
     return (
         <AboutWrapper className='container'>
-            <FlexWrapper>
-                <ImageWrapper>
-                    <img src={photo} alt='user avatar' />
-                </ImageWrapper>
+            <AboutFlex>
+                <ImageWrapper image={photo}/>
                 <Description>
                     <Wrapper>
                         <FlexWrapper>
@@ -107,7 +117,7 @@ const About = () => {
                                 icon={{
                                     width: 32,
                                     height: 22,
-                                    iconPath: svgSprite + '#marsIcon',
+                                    iconPath: svgSprite + '#mars',
                                 }}
                             />
                             <Li label='Возраст' text='21' />
@@ -120,7 +130,8 @@ const About = () => {
                                 другим и решил начать учиться разработке. Так как был выбран фронтенд, то начал я с
                                 верстки, стилей и JS. Сейчат активно изучаю React JS. Прошел курсик на одной из платформ
                                 по этой библиотеке. Сейчас пишу своё небольшое учебное приложение, для получения новых
-                                знаний и оттачивания уже существующих.
+                                знаний и оттачивания уже существующих. Предпочитаю активный спортивный отдых. Читаю книжки,
+                                умею собирать кубик рубика(интересный факт)
                             </span>
                         </AboutMe>
                         <LiWithIcon
@@ -136,7 +147,7 @@ const About = () => {
                         />
                     </Wrapper>
                 </Description>
-            </FlexWrapper>
+            </AboutFlex>
         </AboutWrapper>
     );
 };

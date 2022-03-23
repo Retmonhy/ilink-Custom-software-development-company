@@ -13,10 +13,12 @@ const GeneralButton = styled.button`
     }
 `;
 
-const Button = ({buttonText, onClick }) => {
+const Button = ({buttonChild, onClick }) => {
     return (
         <GeneralButton onClick={onClick || (()=>{}) }>
-            {buttonText}
+            <u>
+                {buttonChild}
+            </u>
         </GeneralButton>
 
     )

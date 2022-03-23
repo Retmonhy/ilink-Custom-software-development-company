@@ -65,7 +65,14 @@ const Feedback = ({setModalIsOpen}) => {
                 <FeedbackWrapper>
                     <HeaderBlock>
                         <FeedbackHeader>Отзывы</FeedbackHeader>
-                        <Button onClick={() => setModalIsOpen(true)} buttonText='+ Добавить отзыв' />
+                        <Button onClick={() => setModalIsOpen(true)} 
+                        buttonChild={
+                        <><svg style={{width: '14px', height: '14px', transform: 'translateY(2px)', marginRight: '10px'}}>
+                            <use xlinkHref={svgSprite+'#plus'}></use>
+                            </svg>
+                            Добавить отзыв
+                        </>}
+                            />
                     </HeaderBlock>
                     <Carousel
                         ref={carouselRef}

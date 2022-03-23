@@ -5,10 +5,20 @@ import logo from '../../images/Logo.png'
 import myPhoto from '../../images/11.jpg'
 import Button from "../GeneralComp/Button";
 import { Wrapper } from "../GeneralComp/SuppComponents"
+import profileSvg from "../../images/Profile.svg"
 
 const HeaderWrappaer = styled.header`
     padding-top: 32px;
     padding-bottom: 32px;
+    @media screen and (max-width: 768px) {
+        padding: 20px 15px
+    }
+`;
+const ProfileBtn = styled(Button)`
+    @media screen and (max-width: 768px) {
+       & > u { display: none;}
+        background: center url(profileSvg);
+    }
 `;
 const HeaderBody = styled.div`
     display: flex;
@@ -56,7 +66,7 @@ const Header = () => {
                     <img src={logo} alt="Logo"/>
                 </Logo>
 
-                <Button buttonText="Панель управления"/>
+                <ProfileBtn buttonChild="Панель управления"/>
             </HeaderBody>
         </HeaderWrappaer>
     )

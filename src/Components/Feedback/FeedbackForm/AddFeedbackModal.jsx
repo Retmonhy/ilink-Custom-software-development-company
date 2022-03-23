@@ -178,7 +178,8 @@ const AddFeedbackModal = ({ setModalIsOpen }) => {
 
                             <Wrapper>
                                 <FileUploadLabel htmlFor='fileAttach'>
-                                    + Загрузить фото
+                                    <svg style={{width: '14px', height: '14px', transform: 'translateY(2px)', marginRight: '10px'}}><use xlinkHref={svgSprite+'#plus'}></use></svg> 
+                                    Загрузить фото
                                     <input
                                         type='file'
                                         name='fileAttach'
@@ -199,7 +200,7 @@ const AddFeedbackModal = ({ setModalIsOpen }) => {
                                     <svg height='24' width='24'><use xlinkHref={svgSprite + '#jpg'}></use></svg>
                                     <FlexWrapperColumn>
                                         {
-                                            inputFiles?.size > 10000 ? 
+                                            inputFiles?.size > 500000 ? 
                                             <span className="error-span">Your file is too big!</span>    
                                             :
                                         <span>{inputFiles?.name}</span>
@@ -238,7 +239,7 @@ const AddFeedbackModal = ({ setModalIsOpen }) => {
                         />
 
                         <SubmitWrapper>
-                            <Button buttonText='Отправить отзыв' type='submit' />
+                            <Button buttonChild='Отправить отзыв' type='submit' />
                             <Wrapper style={{ marginLeft: '20px' }}>
                                 <FlexWrapper>
                                     <svg height='20' width='20'>
