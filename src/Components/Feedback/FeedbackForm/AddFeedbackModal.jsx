@@ -132,15 +132,14 @@ const AddFeedbackModal = ({ setModalIsOpen }) => {
 
     const createFeed = (data) => {
         data['fileAttach'] = inputFiles.name;
-        console.log('data = ', data);
+        console.log('feedback = ', data);
         reset();
-        setFiles(null)
+        setFiles(null);
+        
     };
 
     const handleFiles = files => {
         const file = files[0];
-
-        console.log('reader = ', reader)
         reader.readAsText(file)
         setFiles(file);
     }

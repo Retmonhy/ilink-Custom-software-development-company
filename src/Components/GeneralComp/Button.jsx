@@ -9,16 +9,32 @@ const GeneralButton = styled.button`
     border: none;
     color: #fff;
     border-radius: 2px;
-    &:hover {
+    /* transition: 1s;
+    position: relative;
+    u { z-index: 10;}
+    z-index: 10; */
+    /* &::before {
+        transition: 1s;
+        content: '';
+        z-index: 1;
+        position: absolute;
+        top: 0; left: 0;
+        width: 0; height: 100%;
+        background: #696DC8;
+    }
+    &:hover::before {
+        content: '';
+        width: 100%;
+    } */
+    @media screen and (max-width: 530px) {
+        u { display: none;}
     }
 `;
 
 const Button = ({buttonChild, onClick }) => {
     return (
         <GeneralButton onClick={onClick || (()=>{}) }>
-            <u>
                 {buttonChild}
-            </u>
         </GeneralButton>
 
     )

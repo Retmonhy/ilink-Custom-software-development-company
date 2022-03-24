@@ -10,12 +10,31 @@ const ImageWrapper = styled(Wrapper)`
     height: 450px;
     margin-top: 60px;
     background: transparent url(${props => props.image}) center / cover no-repeat;
+    @media screen and (max-width: 992px) {
+        width: 80%;
+    }
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        height: 350px;
+    }
+    @media screen and (max-width: 530px) {
+        height: 250px;
+        transform: translateY(15px)
+    }
+    @media screen and (max-width: 360px) {
+        width: 300px;
+        height: 200px;
+    }
 `;
 const Name = styled(Wrapper)`
     h2 {
         color: #585cc6;
-        font-family: 'Factor-Bold', sans-serif;
+        font-family: 'Factor-Medium', sans-serif;
         font-size: 32px;
+        line-height: 32px;
+    }
+    @media screen and (max-width: 550px) {
+        font-size: 24px;
         line-height: 32px;
     }
 `;
@@ -24,11 +43,26 @@ const Description = styled(Wrapper)`
     background: #fff;
     border-radius: 2px;
     padding: 40px;
+    z-index: 2;
+    @media screen and (max-width: 992px) {
+        width: 80%;
+    }
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        padding: 15px;
+    }
+    @media screen and (max-width: 550px) {
+        padding: 15px;
+    }
+    
 `;
 const BirthDate = styled(Wrapper)`
     span {
         font-family: 'Gilroy-Regular', sans-serif;
         color: #8a8a8a;
+    }
+    @media screen and (max-width: 550px) {
+        font-size: 16px; line-height: 22px;
     }
 `;
 const Ul = styled(FlexWrapper)`
@@ -37,14 +71,18 @@ const Ul = styled(FlexWrapper)`
     margin: 20px 0;
     li {
         margin-right: 40px;
+        margin-bottom: 15px;
         strong {
             font-family: 'Gilroy-Bold', sans-serif;
         }
     }
+    @media screen and (max-width: 530px) {
+        li { margin-right: 0; font-size: 16px;}
+        justify-content: space-between;
+    }
 `;
 const Li = ({ label, text }) => (
     <li>
-        {' '}
         <strong>{label}</strong>: {text}{' '}
     </li>
 );
@@ -77,18 +115,23 @@ const AboutMe = styled.div`
         font-size: 16px;
         line-height: 20px;
     }
+    }
     @media screen and (max-width: 1100px ) {
         span {
         font-size: 14px;
         line-height: 18px;
     }
-}
+    }
 `;
 const AboutWrapper = styled(Wrapper)`
     padding-bottom: 120px;
 `;
 const AboutFlex = styled(FlexWrapper)`
-@media screen and (max-width: 1200px ) {
+@media screen and (max-width: 992px ) {
+    flex-direction: column;
+}
+@media screen and (max-width: 550px ) {
+    align-items: start;
 }
 `;
 

@@ -22,15 +22,26 @@ const ItemWrapper = styled(Wrapper)`
     border-radius: 2px;
     background: #f5f5f5;
     padding: 25px;
+    @media screen and (max-width: 768px) {
+        padding: 20px;
+    }
 `;
 const MarginFlex = styled(FlexWrapper)`
     align-items: start;
     margin-bottom: 25px ;
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: start;
+        margin-bottom: 15px;
+    }
 `;
 const PostDate = styled(Wrapper)`
     font-family: "Factor-Regular", sans-serif;
     font-size: 14px;
     color: #8A8A8A;
+    @media screen and (max-width: 768px) {
+        margin-top: 12px;
+    }
 `;
 
 const FeedbackItem = ({ userPhoto, userName, userPost, postDate }) => {    

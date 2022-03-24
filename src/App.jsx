@@ -56,8 +56,8 @@ function App() {
       <Main background={backg}>
         <MainHeader className="container header__margin">Добро пожаловать <br/>в академию!</MainHeader>
         <About/>
-        {/* <Feedback setModalIsOpen={setModalIsOpen}/> */}
-        {modalIsOpen && <AddFeedbackModal setModalIsOpen={setModalIsOpen}/>}
+        <Feedback setModalIsOpen={setModalIsOpen}/>
+        {modalIsOpen && <AddFeedbackModal setModalIsOpen={setModalIsOpen} />}
       </Main>
       <Copyright/>
     </div>

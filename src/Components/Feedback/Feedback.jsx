@@ -8,7 +8,6 @@ import feeds from './feedback.module.css';
 import Button from '../GeneralComp/Button';
 import { Wrapper, FlexWrapper } from '../GeneralComp/SuppComponents';
 import FeedbackItem from './FeedbackItem';
-import AddFeedbackModal from './FeedbackForm/AddFeedbackModal';
 
 
 const Container = styled.div``;
@@ -17,19 +16,33 @@ const FeedbackWrapper = styled(Wrapper)`
     padding: 60px;
     padding-left: 80px;
     margin-right: 80px;
-    min-width: 1200px;
+    max-width: 1200px;
+    width: 100%;
     margin-right: 35px;
+    @media screen and (max-width: 1200px) {
+        padding: 30px;
+    }
+    @media screen and (max-width: 992px) {
+        margin-right: 0;
+    }
 `;
 const FeedbackHeader = styled.h2`
     font-family: 'Factor-Medium';
     font-size: 68px;
     line-height: 88px;
+    @media screen and (max-width: 768px) {
+        font-size: 32px; line-height: 42px;
+    }
 `;
 const HeaderBlock = styled(FlexWrapper)`
     margin-bottom: 40px;
+    
 `;
 const ButtonsWrapper = styled(FlexWrapper)`
     float: right;
+    @media screen and (max-width: 992px) {
+        display: none;
+    }
 `;
 const CarouselButton = styled.button`
     width: 55px;
@@ -38,7 +51,6 @@ const CarouselButton = styled.button`
     background: #fff url(${(props) => props.arrowPath}) center no-repeat;
     svg > use{ stroke: #333; }
     &:hover svg > use{ stroke: #333; }
-    /* &:hover svg > use {fill: red; } */
 
 `;
 const PaginationItem = styled.span`
@@ -53,8 +65,18 @@ const PaginationItem = styled.span`
         opacity: 1;
     }
 `;
+const AddFeedBtn = styled(Button)`
+    padding: 15px;
+    @media screen and (max-width: 550px) {
+        padding: 15px;
+    }
+`;
 
 const Feedback = ({setModalIsOpen}) => {
+    const [ screenSize, setScreenSize ] = useState(null);
+    window.onresize = () => setScreenSize(window.innerWidth)
+    window.onload = () => setScreenSize(window.innerWidth)
+
     const carouselRef = useRef(null);
     const [prevState, setPrevState] = useState(true);
     const [nextState, setNextState] = useState(false);
@@ -65,13 +87,18 @@ const Feedback = ({setModalIsOpen}) => {
                 <FeedbackWrapper>
                     <HeaderBlock>
                         <FeedbackHeader>Отзывы</FeedbackHeader>
-                        <Button onClick={() => setModalIsOpen(true)} 
+                        <Button as={AddFeedBtn}  onClick={() => setModalIsOpen(true)} 
                         buttonChild={
+                            screenSize > 550 ?
                         <><svg style={{width: '14px', height: '14px', transform: 'translateY(2px)', marginRight: '10px'}}>
-                            <use xlinkHref={svgSprite+'#plus'}></use>
-                            </svg>
-                            Добавить отзыв
-                        </>}
+                        <use xlinkHref={svgSprite+'#plus'}></use>
+                        </svg>
+                            <u>Добавить отзыв</u>
+                        </>
+                        :<svg style={{width: '14px', height: '14px', transform: 'translateY(2px)'}}>
+                        <use xlinkHref={svgSprite+'#plus'}></use>
+                        </svg>
+                    }
                             />
                     </HeaderBlock>
                     <Carousel
@@ -86,7 +113,7 @@ const Feedback = ({setModalIsOpen}) => {
                         }}
                         renderPagination = {({ pages, activePage, onClick }) => {
                             return (
-                                <FlexWrapper>
+                                <FlexWrapper style={{marginTop: '32px'}}>
                                     {pages.map(page => {
                                         const isActivePage = activePage === page;
                                         return (
@@ -106,7 +133,9 @@ const Feedback = ({setModalIsOpen}) => {
                         itemsToShow={2}
                         itemsToScroll={1}
                         showArrows={false}
+                        breakPoints={[{ width: 1, itemsToShow: 1 }, { width: 780, itemsToShow: 2 }]}
                         disableArrowsOnEnd={true}>
+                            
                         {feedbacks.map((feed, index) => (
                             <FeedbackItem
                                 style={{ display: 'inline-block' }}
