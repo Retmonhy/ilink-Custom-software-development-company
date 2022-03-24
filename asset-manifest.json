@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ilink-Custom-software-development-company/static/css/main.059554ca.css",
+    "main.js": "/ilink-Custom-software-development-company/static/js/main.e6d2065d.js",
+    "static/media/11.jpg": "/ilink-Custom-software-development-company/static/media/11.6da86a9e7ed588a7fbcf.jpg",
+    "static/media/gilroy-medium.ttf": "/ilink-Custom-software-development-company/static/media/gilroy-medium.f9f832b0ed3f1ab138c9.ttf",
+    "static/media/gilroy-regular.ttf": "/ilink-Custom-software-development-company/static/media/gilroy-regular.b91b0127c56a8e5f9e83.ttf",
+    "static/media/Gilroy-SemiBold.ttf": "/ilink-Custom-software-development-company/static/media/Gilroy-SemiBold.6780292641f883b3dad3.ttf",
+    "static/media/gilroy-bold.ttf": "/ilink-Custom-software-development-company/static/media/gilroy-bold.b900325e44ec0c673e88.ttf",
+    "static/media/FactorAMedium-Regular.ttf": "/ilink-Custom-software-development-company/static/media/FactorAMedium-Regular.1a1b89bd931afe1bfa27.ttf",
+    "static/media/svg-sprite.svg": "/ilink-Custom-software-development-company/static/media/svg-sprite.b435add9121829e156dd03153abdd0a2.svg",
+    "static/media/social-sprite.svg": "/ilink-Custom-software-development-company/static/media/social-sprite.05e98a36524b18de51d2ade965fa9451.svg",
+    "static/media/bg_svg.svg": "/ilink-Custom-software-development-company/static/media/bg_svg.d77696d72a8947bdec15a63d352d2d62.svg",
+    "index.html": "/ilink-Custom-software-development-company/index.html",
+    "static/media/Profile.svg": "/ilink-Custom-software-development-company/static/media/Profile.914b09f4831f7f477784c0c99db56dc0.svg",
+    "main.059554ca.css.map": "/ilink-Custom-software-development-company/static/css/main.059554ca.css.map",
+    "main.e6d2065d.js.map": "/ilink-Custom-software-development-company/static/js/main.e6d2065d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.059554ca.css",
+    "static/js/main.e6d2065d.js"
+  ]
+}
