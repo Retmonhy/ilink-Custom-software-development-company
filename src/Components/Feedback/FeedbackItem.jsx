@@ -18,7 +18,7 @@ const ImageWrapper = styled(Wrapper)`
 `;
 const ItemWrapper = styled(Wrapper)`
     max-width: 520px;
-    height: 280px;
+    min-height: 280px;
     border-radius: 2px;
     background: #f5f5f5;
     padding: 25px;

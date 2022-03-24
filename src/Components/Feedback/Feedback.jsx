@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useContext } from 'react';
 import styled from 'styled-components';
 import Carousel from 'react-elastic-carousel';
 import { feedbacks } from './feedbacks';
@@ -8,6 +8,7 @@ import feeds from './feedback.module.css';
 import Button from '../GeneralComp/Button';
 import { Wrapper, FlexWrapper } from '../GeneralComp/SuppComponents';
 import FeedbackItem from './FeedbackItem';
+import { Context } from "../Context"
 
 
 const Container = styled.div``;
@@ -24,6 +25,9 @@ const FeedbackWrapper = styled(Wrapper)`
     }
     @media screen and (max-width: 992px) {
         margin-right: 0;
+    }
+    @media screen and (max-width: 530px) {
+        padding: 20px 15px;
     }
 `;
 const FeedbackHeader = styled.h2`
@@ -73,10 +77,7 @@ const AddFeedBtn = styled(Button)`
 `;
 
 const Feedback = ({setModalIsOpen}) => {
-    const [ screenSize, setScreenSize ] = useState(null);
-    window.onresize = () => setScreenSize(window.innerWidth)
-    window.onload = () => setScreenSize(window.innerWidth)
-
+    const screenSize = useContext(Context);
     const carouselRef = useRef(null);
     const [prevState, setPrevState] = useState(true);
     const [nextState, setNextState] = useState(false);
@@ -89,7 +90,7 @@ const Feedback = ({setModalIsOpen}) => {
                         <FeedbackHeader>Отзывы</FeedbackHeader>
                         <Button as={AddFeedBtn}  onClick={() => setModalIsOpen(true)} 
                         buttonChild={
-                            screenSize > 550 ?
+                            screenSize && screenSize > 550 ?
                         <><svg style={{width: '14px', height: '14px', transform: 'translateY(2px)', marginRight: '10px'}}>
                         <use xlinkHref={svgSprite+'#plus'}></use>
                         </svg>

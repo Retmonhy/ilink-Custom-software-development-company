@@ -125,6 +125,9 @@ const AboutMe = styled.div`
 `;
 const AboutWrapper = styled(Wrapper)`
     padding-bottom: 120px;
+    @media screen and (max-width: 530px) {
+        padding-bottom: 60px;
+    }
 `;
 const AboutFlex = styled(FlexWrapper)`
 @media screen and (max-width: 992px ) {

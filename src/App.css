@@ -8,6 +8,14 @@
     padding-left: 0;
 }
 
+.container.leftside-container {
+    padding-left: 0;
+}
+
+.container.rightside-container {
+    padding-right: 0;
+}
+
 .rightside-container {
     padding-right: 0;
 }
